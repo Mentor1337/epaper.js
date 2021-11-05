@@ -118,6 +118,21 @@ curl -sL install-node.now.sh/lts | sudo bash
 
 sudo apt-get update
 
+    # Installing NodeJS/npm for ARM6 (RaspberryPi Zero)
+    Locate most recent version of NodeJS for ARM6 from https://unofficial-builds.nodejs.org/download/release (it will end in .tar.xz)
+        wget with the full URL path
+            #EXAMPLE: wget https://unofficial-builds.nodejs.org/download/release/v17.0.1/node-v17.0.1-linux-armv6l.tar.xz  
+    Extract tar file
+        tar xfvJ (.tar.xz file)
+            #EXAMPLE: tar xvfJ node-v17.0.1-linux-armv6l.tar.xz
+    Copy the directory to your /usr/local 
+        sudo cp -R (extracted folder)/* /usr/local
+            #EXAMPLE: sudo cp -R node-v17.0.1-linux-armv6l/* /usr/local
+    If you like, delete left over residual files
+        rm -rf node-*
+    Reboot
+        sudo reboot
+
 # Install wiringpi
 sudo apt-get install -y wiringpi
 
